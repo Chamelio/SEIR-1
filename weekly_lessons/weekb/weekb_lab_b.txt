@@ -28,5 +28,12 @@ This is the real transition from “click ops” to “cloud engineer”:
 
 Find the URL and open it in your browser.
 
+All GAtes:
+Find it, Run it: --> https://github.com/BalericaAI/SEIR-1/blob/main/weekly_lessons/weekb/python/gate_lab2_http.sh
+
+CLI
+    VM_IP=$(terraform output -raw vm_external_ip)
+    VM_IP="$VM_IP" ./gate_lab2_http.sh
+
 
 
