@@ -29,3 +29,20 @@ module "lb" {
 # allowed_ips = ["YOUR_IP/32"]
 
 }
+
+
+module "waf" {
+  source = "./modules/waf"
+
+  name = "${local.prefix}-${var.environment}"
+
+  enable_geo_blocking  = true
+  blocked_region_codes = ["RU", "CN", "KP"]
+
+  enable_rate_limit       = true
+  rate_limit_count        = 100
+  rate_limit_interval_sec = 60
+
+  enable_waf_rules      = true
+  enable_bot_management = false
+}
